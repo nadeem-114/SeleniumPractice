@@ -14,11 +14,11 @@ namespace UploadFile_Practice
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("start-maximized");
-            string extn = "C:\\Users\\NADEEM\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\bgnkhhnnamicmpeenaelnjfhikgbkllg\\4.1.53_0";
+            string extn = "C:\\Users\\YourName\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\bgnkhhnnamicmpeenaelnjfhikgbkllg\\4.1.53_0";
             options.AddArguments("load-extension=" + extn);
             IWebDriver driver = new ChromeDriver(options);
             driver.Url = "https://demoqa.com/automation-practice-form";
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
 
             InputSimulator sim = new InputSimulator();
 
@@ -27,7 +27,7 @@ namespace UploadFile_Practice
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
             sim.Keyboard.TextEntry("Khan");
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
-            sim.Keyboard.TextEntry("mrnadeem114@gmail.com");
+            sim.Keyboard.TextEntry("youremail@gmail.com");
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
             sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
             sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
@@ -35,7 +35,7 @@ namespace UploadFile_Practice
             sim.Keyboard.TextEntry("3141234567");
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
             sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_A);
-            sim.Keyboard.TextEntry("11/July/1999");
+            sim.Keyboard.TextEntry("DD/MM/YYYY");
             sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
             IWebElement subj = driver.FindElement(By.CssSelector("input[id='subjectsInput']"));
             subj.Click();
@@ -47,11 +47,11 @@ namespace UploadFile_Practice
             sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
             AutoItX.WinActivate("Open");
             Thread.Sleep(1000);
-            AutoItX.Send(@"C:\Users\NADEEM\Pictures\Programmer.png");
+            AutoItX.Send(@"C:\Users\YourName\Pictures\Programmer.png");
             Thread.Sleep(1000);
             AutoItX.Send("{ENTER}");
             driver.FindElement(By.Id("currentAddress")).Click();
-            sim.Keyboard.TextEntry("Mohallah Gulbahar, Village & post office Shaidu (24030), Tehsil Jehangira, District Nowshera, KP");
+            sim.Keyboard.TextEntry("Your Address");
             sim.Keyboard.KeyPress(VirtualKeyCode.TAB);
             sim.Keyboard.TextEntry("Raj");
             sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
